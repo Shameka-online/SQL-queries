@@ -45,6 +45,9 @@ select * from sweet;
 select * from savoury; 
 select * from Savouryextra; 
 
+/*select all savoury items that have either pork or beef filling*/
+select * from savoury where main_ingredient in ('pork', 'beef');
+
 
 -- create another table called 'Savouryextra'
 CREATE TABLE Savouryextra(
@@ -68,6 +71,21 @@ truncate table Savouryextra;
 
 -- Run this to confirm that the table is now empty again
 select * from Savouryextra;
+
+-- find sweets for 50p or less
+select * from sweet where price < 0.5
+
+-- find all sweet items and price except cannoli
+
+select * from sweet where item_name != 'cannoli';
+
+-- find sweet items starting with c 
+
+select * from sweet where item_name like ('c%');
+
+-- find savoury items that cost more than 1 but less than 3
+
+select * from savoury where price between 1.00 and 3.00;
 
 SHOW TABLES;
 
