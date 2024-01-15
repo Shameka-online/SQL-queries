@@ -30,7 +30,7 @@ SELECT *
 FROM Table2_fruit_basket;
 
 /* inner join
-selects everyting from table and joins what applies*/
+selects everyting from table 1 and joins the matches in table 2*/
 select t1.*, t2.*
 from table1_fruit_basket t1
 inner join table2_fruit_basket t2 on t1.id = t2.id;
@@ -50,6 +50,8 @@ select t1.*, t2.*
 from table1_fruit_basket t1
 left join table2_fruit_basket t2 on t1.id = t2.id;
 
+/* joins everything from table 2 with matching rows from
+table 1 where the id is null in table 2 */
 select t1.*, t2.*
 from table1_fruit_basket t1
 left join table2_fruit_basket t2 on t1.id = t2.id
@@ -62,7 +64,7 @@ from table1_fruit_basket t1
 right join table2_fruit_basket t2 on t1.id = t2.id;
 
 /* outer join. 
-full outer join not in this flavour so use union
+full outer join not in mysql so use union
 and using left join and right join 
 null is displayed when there are no pairs*/
 SELECT * FROM Table1_fruit_basket t1
@@ -87,7 +89,6 @@ SELECT t1.*,t2.*
 FROM Table1_fruit_basket t1
 CROSS JOIN Table2_fruit_basket t2;
 
--- USE THE SAME FRUIT TABLES THAT WE PRACTICED WITH FOR JOINS
 
 /* UNION ALL - has duplicates as it joins everything from both tables */
 SELECT t1.ID T1ID, t1.Fruit AS T1Fruit
